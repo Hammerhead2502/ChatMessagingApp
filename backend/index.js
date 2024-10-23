@@ -41,7 +41,7 @@ exports.getRecipientSocketID = (recipientID) => {
 
 mongoose
   .connect(
-    "mongodb+srv://dhirenmanekar:7DQDA1tQEmz96ftU@cluster0.kwqslfl.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
+    process.env.MONGODB
   )
   .then(() => console.log("DB connected"));
 

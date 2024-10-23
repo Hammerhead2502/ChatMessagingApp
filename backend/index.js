@@ -27,7 +27,7 @@ io.on("connection", async(socket) => {
   io.emit("online users", users)
 
   socket.on('disconnect', async() => {
-    await axios.post("http://localhost:3000/getUser", {userID: userID}).then((res) => {
+    await axios.post(`${process.env.BACKEND_URL}/getUser`, {userID: userID}).then((res) => {
       if(res.status == 200){
         users[userID] = {...users[userID], lastSeen: res?.data?.data?.lastSeen, status: "Offline"}
         io.emit("online users", users)

@@ -7,6 +7,7 @@ const messageRouter = require("./routers/message.router")
 const express = require("express")
 const axios = require("axios")
 const geminiAIRouter = require("./routers/geminiAI.router")
+require("dotenv").config()
 
 app.use(cors(corsOptions));
 
